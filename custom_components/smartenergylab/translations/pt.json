@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Smart Energy Lab",
+                "title": "Informação do Explorador",
                 "description": "Se precisa de ajuda com a configuração, consulte: https://smartenergylab.pt",
                 "data": {
                     "client_id": "Client ID",
