@@ -1,0 +1,12 @@
+{
+  "domain": "smartenergylab",
+  "name": "Smart Energy Lab",
+  "documentation": "https://github.com/dgomes/ha_smartenergylab",
+  "iot_class": "cloud_pushing",
+  "issue_tracker": "https://github.com/dgomes/ha_smartenergylab/issues",
+  "version": "0.0.0",
+  "config_flow": true,
+  "codeowners": [
+    "@dgomes"
+  ]
+}

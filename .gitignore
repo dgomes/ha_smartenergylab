@@ -1,0 +1,7 @@
+__pycache__
+.vscode
+pythonenv*
+venv
+.venv
+.coverage
+.idea

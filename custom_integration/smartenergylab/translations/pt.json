@@ -1,0 +1,26 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Smart Energy Lab",
+                "description": "Se precisa de ajuda com a configuração, consulte: https://smartenergylab.pt",
+                "data": {
+                    "client_id": "Client ID",
+                    "sensors": "Sensores partilhados com o SEL"
+                }
+            }
+        },
+        "abort": {
+            "single_instance_allowed": "Apenas uma instância é permitida."
+        }
+    },
+    "options": {
+        "step": {
+            "user": {
+                "data": {
+                    "sensors": "Sensores partilhados com o SEL"
+                }
+            }
+        }
+    }
+}

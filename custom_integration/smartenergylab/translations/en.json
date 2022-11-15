@@ -1,0 +1,26 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Smart Energy Lab",
+                "description": "If you need help with the configuration have a look here: https://smartenergylab.pt",
+                "data": {
+                    "client_id": "Client ID",
+                    "sensors": "Sensors shared with SEL"
+                }
+            }
+        },
+        "abort": {
+            "single_instance_allowed": "Only a single instance is allowed."
+        }
+    },
+    "options": {
+        "step": {
+            "user": {
+                "data": {
+                    "sensors": "Sensors shared with SEL"
+                }
+            }
+        }
+    }
+}
