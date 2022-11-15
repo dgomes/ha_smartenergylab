@@ -18,13 +18,10 @@ Using your HA configuration directory (folder) as a starting point you should no
 custom_components/ha_smartenergylab/translations/en.json
 custom_components/ha_smartenergylab/translations/pt.json
 custom_components/ha_smartenergylab/__init__.py
-custom_components/ha_smartenergylab/api.py
-custom_components/ha_smartenergylab/binary_sensor.py
+custom_components/ha_smartenergylab/recorder.py
 custom_components/ha_smartenergylab/config_flow.py
 custom_components/ha_smartenergylab/const.py
 custom_components/ha_smartenergylab/manifest.json
-custom_components/ha_smartenergylab/sensor.py
-custom_components/ha_smartenergylab/switch.py
 ```
 
 ## Configuration is done in the UI
