@@ -1,12 +1,5 @@
 # Smart Energy Lab - Custom Integration 
 
-[![GitHub Release][releases-shield]][releases]
-[![GitHub Activity][commits-shield]][commits]
-[![License][license-shield]](LICENSE)
-
-[![hacs][hacsbadge]][hacs]
-![Project Maintenance][maintenance-shield]
-
 ## Installation
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
