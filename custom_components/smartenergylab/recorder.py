@@ -15,6 +15,7 @@ import async_timeout
 from homeassistant.core import Event, HomeAssistant, callback
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.event import async_track_time_interval
+from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
 
 from .const import CONF_SENSORS, DEFAULT_TIMEOUT, UPDATE_INTERVAL
 
@@ -67,18 +68,19 @@ class SELRecorder:
         for sensor, sensor_hash in self.sensors.items():
 
             state = self.hass.states.get(sensor)
-            message.append(
-                {
-                    "collection_date": now_str,
-                    "local_id": sensor_hash,
-                    "message_type": DEVICE_CLASS_2_PARAMETER_KEY[
-                        state.attributes["device_class"]
-                    ],
-                    "val": float(state.state) * 1000
-                    if state.attributes["unit_of_measurement"].startswith("k")
-                    else state.state,
-                }
-            )
+            if state.state not in (STATE_UNAVAILABLE, STATE_UNKNOWN, None):
+                message.append(
+                    {
+                        "collection_date": now_str,
+                        "local_id": sensor_hash,
+                        "message_type": DEVICE_CLASS_2_PARAMETER_KEY[
+                            state.attributes["device_class"]
+                        ],
+                        "val": float(state.state) * 1000
+                        if state.attributes["unit_of_measurement"].startswith("k")
+                        else state.state,
+                    }
+                )
 
         try:
             async with async_timeout.timeout(DEFAULT_TIMEOUT):
