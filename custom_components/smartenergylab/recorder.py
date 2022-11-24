@@ -68,7 +68,7 @@ class SELRecorder:
         for sensor, sensor_hash in self.sensors.items():
 
             state = self.hass.states.get(sensor)
-            if state.state not in (STATE_UNAVAILABLE, STATE_UNKNOWN, None):
+            if state and state.state not in (STATE_UNAVAILABLE, STATE_UNKNOWN, None):
                 message.append(
                     {
                         "collection_date": now_str,
