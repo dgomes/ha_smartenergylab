@@ -69,18 +69,23 @@ class SELRecorder:
 
             state = self.hass.states.get(sensor)
             if state and state.state not in (STATE_UNAVAILABLE, STATE_UNKNOWN, None):
-                message.append(
-                    {
-                        "collection_date": now_str,
-                        "local_id": sensor_hash,
-                        "message_type": DEVICE_CLASS_2_PARAMETER_KEY[
-                            state.attributes["device_class"]
-                        ],
-                        "val": float(state.state) * 1000
-                        if state.attributes["unit_of_measurement"].startswith("k")
-                        else state.state,
-                    }
-                )
+                try:
+                    message.append(
+                        {
+                            "collection_date": now_str,
+                            "local_id": sensor_hash,
+                            "message_type": DEVICE_CLASS_2_PARAMETER_KEY[
+                                state.attributes["device_class"]
+                            ],
+                            "val": float(state.state) * 1000
+                            if state.attributes["unit_of_measurement"].startswith("k")
+                            else state.state,
+                        }
+                    )
+                except KeyError:
+                    _LOGGER.error(
+                        "Sensor %s does not have a valid device_class: %s", sensor, state.attributes
+                    )
 
         try:
             async with async_timeout.timeout(DEFAULT_TIMEOUT):
